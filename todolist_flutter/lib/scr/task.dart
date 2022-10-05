@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todolist/scr/add.dart';
 
 import '../wig/task_list.dart';
 
@@ -12,8 +13,11 @@ class Task extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           showModalBottomSheet(
+            isScrollControlled: true,
            context: context,
-           builder: (context) => Container()
+           builder: (context) => SingleChildScrollView(child: Container(
+            padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+            child: addtask()))
            );
         },
         backgroundColor: Colors.blue[400],
