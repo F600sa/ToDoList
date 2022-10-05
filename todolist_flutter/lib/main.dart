@@ -1,4 +1,10 @@
+
 import 'package:flutter/material.dart';
+import 'package:todolist/scr/task.dart';
+
+
+// ...
+
 
 void main() {
   runApp(const MyApp());
@@ -39,41 +45,8 @@ class todolist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('ToDoList'),
-      ),
-      
-      body: SafeArea(
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,  
-          // crossAxisAlignment:CrossAxisAlignment,
-          children: [
-            
-            TextField(
-              keyboardType: TextInputType.text,
-              controller: edtxt,
-            ),
-            SizedBox(height: 20000,),
-          ],
-        ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle_outline),
-            label: 'Add',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-      ),
+    return MaterialApp(
+      home: Task(),
     );
-  }
-}
+    }
+    }
