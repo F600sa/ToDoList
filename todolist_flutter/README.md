@@ -1,4 +1,4 @@
-# todolist
+# todo
 
 A new Flutter project.
 
