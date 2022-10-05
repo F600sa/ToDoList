@@ -29,14 +29,34 @@ class MyApp extends StatelessWidget {
   }
 }
 
+final edtxt = TextEditingController();
+void ev() {
+  print(edtxt.text.toString());
+}
+
 class todolist extends StatelessWidget {
   const todolist({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(
+      appBar: AppBar(
         title: const Text('ToDoList'),
+      ),
+      
+      body: SafeArea(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,  
+          // crossAxisAlignment:CrossAxisAlignment,
+          children: [
+            
+            TextField(
+              keyboardType: TextInputType.text,
+              controller: edtxt,
+            ),
+            SizedBox(height: 20000,),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -52,11 +72,8 @@ class todolist extends StatelessWidget {
             icon: Icon(Icons.settings),
             label: 'Settings',
           ),
-          
         ],
-        
       ),
     );
-    
   }
 }
